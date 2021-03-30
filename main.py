@@ -9,7 +9,7 @@ configFile = open('config.json')
 config = json.load(configFile)
 
 subreddits = "+".join(config["subreddits"])
-url = 'https://api.outline.com/v3/parse_article'
+apiURL = 'https://api.outline.com/v3/parse_article'
 
 reddit = praw.Reddit(
     user_agent="NewsOutlineBot (by u/iamgloriousbastard)",
@@ -21,9 +21,15 @@ reddit = praw.Reddit(
 
 subreddit = reddit.subreddit(subreddits)
 for submission in subreddit.stream.submissions(skip_existing=True):
-    response = requests.get(url, params={"source_url": submission.url})
-    submission.reply("Paywalls? Cluttered? Here's the Outline URL! https://outline.com/" + response.json()['data']['short_code'])
-    print(response.json()['data']['short_code'])
+    for url in config["urls"]:
+        if url in submission.url:
+            response = requests.get(apiURL, params={"source_url": submission.url})
+            submission.reply(
+                "Paywalls? Cluttered? Here's the Outline URL! https://outline.com/" + response.json()['data'][
+                    'short_code'])
+            print(response.json()['data']['short_code'])
+
+
 
 
 
