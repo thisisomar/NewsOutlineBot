@@ -28,27 +28,3 @@ for submission in subreddit.stream.submissions(skip_existing=True):
                 "Paywalls? Cluttered? Here's the Outline URL! https://outline.com/" + response.json()['data'][
                     'short_code'])
             print(response.json()['data']['short_code'])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def print_hi(name):
-#     # Use a breakpoint in the code line below to debug your script.
-#     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-#
-#
-# # Press the green button in the gutter to run the script.
-# if __name__ == '__main__':
-#     print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
