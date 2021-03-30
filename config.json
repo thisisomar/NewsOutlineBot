@@ -1,11 +1,13 @@
 {
   "subreddits": [
-    "u_NewsOutlineBot"
+    "hamilton"
   ],
   "urls": [
     "thespec.com",
     "cbc.ca",
     "thestar.com",
+    "globalnews.ca",
+    "ctvnews.ca",
     "chch.com"
   ]
 }
