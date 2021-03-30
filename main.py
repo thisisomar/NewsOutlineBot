@@ -24,7 +24,7 @@ for submission in subreddit.stream.submissions(skip_existing=True):
     for url in config["urls"]:
         if url in submission.url:
             response = requests.get(apiURL, params={"source_url": submission.url})
-            submission.reply(
-                "Paywalls? Cluttered? Here's the Outline URL! https://outline.com/" + response.json()['data'][
-                    'short_code'])
+            submission.reply("Paywalls? Cluttered?" + "\n\nOutline URL: https://outline.com/"
+                             + response.json()['data']['short_code'] +
+                             "\n\n^(I am a bot, created by ^u/iamgloriousbastard. Have a suggestion?  Send me a DM!)")
             print(response.json()['data']['short_code'])
