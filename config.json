@@ -1,13 +1,10 @@
 {
   "subreddits": [
-    "hamilton"
+    "hamilton",
+    "mcmaster"
   ],
   "urls": [
     "thespec.com",
-    "cbc.ca",
-    "thestar.com",
-    "globalnews.ca",
-    "ctvnews.ca",
-    "chch.com"
+    "thestar.com"
   ]
 }
